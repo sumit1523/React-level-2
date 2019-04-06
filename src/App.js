@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Toggle from './Toggle.js';
 
 class App extends Component {
   render() {
@@ -19,7 +20,13 @@ class App extends Component {
           >
             Learn React
           </a>
+          {/* <Toggle/> */}
+
+          <Toggle>
+            <h1>Hello</h1>
+          </Toggle>
         </header>
+        
       </div>
     );
   }
