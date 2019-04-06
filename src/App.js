@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './ToggleRenderProps.js';
+import Toggle from './ToggleRPC';
 
 class App extends Component {
   render() {
@@ -20,29 +20,14 @@ class App extends Component {
           >
             Learn React
           </a>
-          {/* <Toggle display= {greetings=>(
-            <div>
-              <h1>{greetings}</h1>
-              <button >Show/Hide</button>
-            </div>
-          )}
-          /> */}
-
-          <Toggle display= {({on,toggle})=>(
+        <Toggle>
+         {({on, toggle})=>(
             <div>
               {on && <h1>Show Me</h1>}
               <button onClick={toggle}>Show/Hide</button>
             </div>
           )}
-          />
-
-          <Toggle display= {({on,toggle})=>(
-            <div>
-              {on && <nav>nav item</nav>}
-              <button onClick={toggle}>Menu</button>
-            </div>
-          )}
-          />
+          </Toggle>
         </header>
       </div>
     );
