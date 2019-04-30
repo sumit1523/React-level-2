@@ -22,4 +22,3 @@ export default class Portal extends Component {
         return ReactDOM.createPortal(children, this.el);
     }
 }
-
