@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Portal } from 'Utilites';
 import Icon from './Icon';
 import { Card } from './Cards';
+import { elevation, transition, teal, absolute } from 'Utilites';
+
 
 export default class Modal extends Component {
   render() {
@@ -26,9 +28,7 @@ export default class Modal extends Component {
 }
 
 const ModalWrapper = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
+    ${absolute({})};
     width: 100%;
     height: 100%;
     display: flex;
@@ -45,23 +45,31 @@ const  ModalCard = styled.div`
     background: white;
     border-radius: 5px;
     padding: 15px;
-    box-shadow: 2px 2px 10px rgba(0,0,0, 0.3);
+    color: ${teal};
+    ${elevation[4]};
+    ${transition({
+        ease: 'ease-in',
+        length: '1s'
+    })};
+
+    &:hover{
+        ${elevation[5]};
+    }
 `;
 
 const CloseButton = styled.button`
-    position: absolute;
-    top: 0;
-    right: 0;
     border: none;
-    background:
+    background: transparent;
+    ${absolute({
+        y: 'top',
+        x: 'right'
+    })};
 `;
 
 const Background = styled.div`
-    position: absolute;
+    ${absolute({})};
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     background: black;
     opacity: 0.5;
 `;
