@@ -4,35 +4,8 @@ import './App.css';
 import { Toggle } from 'Utilites';
 import { Modal } from 'Elements';
 import User from './Utilites/User';
-import {UserContext} from './Utilites/UserContext'
+import  UserProvider  from './Utilites/UserProvider';
 
-class UserProvider extends Component {
-  state = {
-    id: '123',
-    name: "sumit",
-    email: "sumit1523@gmail.com"
-  };
-
-  logout = () => {
-    this.setState({
-      id: '',
-      name: '',
-      email: ''
-    })
-  }
-
-  render() {
-    return (
-      <UserContext.Provider value = {{
-        user: this.state,
-        logout: this.logout
-      }}>
-        {this.props.children}
-      </UserContext.Provider>
-    );
-    
-  }
-}
 class App extends Component {
   render() {
     return (
