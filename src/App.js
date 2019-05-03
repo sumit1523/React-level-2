@@ -1,4 +1,4 @@
-import React, { Component, Fragment, createContext} from 'react';
+import React, { Component, Fragment } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Toggle } from 'Utilites';
@@ -11,11 +11,21 @@ class UserProvider extends Component {
     id: '123',
     name: "sumit",
     email: "sumit1523@gmail.com"
+  };
+
+  logout = () => {
+    this.setState({
+      id: '',
+      name: '',
+      email: ''
+    })
   }
+
   render() {
     return (
       <UserContext.Provider value = {{
-        user: this.state
+        user: this.state,
+        logout: this.logout
       }}>
         {this.props.children}
       </UserContext.Provider>
